@@ -2,13 +2,14 @@ import { ReactNode } from "react"
 import Link from "next/link"
 import { Dot } from "@/components/icons/Dot"
 import { VerticalLine } from "@/components/icons/VerticalLine"
-
+import { Suspense } from 'react'
+import DashboardSkeleton from "@/app/ui/skeletons"
 
 type stepsLayoutProps = {
   children: ReactNode
 }
 
-export const StepsLayout = ({ children }: stepsLayoutProps) => {
+const StepsLayout = ({ children }: stepsLayoutProps) => {
     // const router = useRouter()
  
     return (
@@ -18,7 +19,10 @@ export const StepsLayout = ({ children }: stepsLayoutProps) => {
           <div className='flex items-center gap-4'>
             {/* <!--dot is highlighted (active) here--> */}
             <Dot active />
-            <p>Step 1</p>
+            <Suspense fallback={<DashboardSkeleton />}>
+              <p>Step 1</p>
+            </Suspense>
+            
           </div>
         </Link>
         {/* <!--vertical line is not active--> */}
@@ -45,3 +49,4 @@ export const StepsLayout = ({ children }: stepsLayoutProps) => {
   )
 }
 
+export default StepsLayout;
