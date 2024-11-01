@@ -6,11 +6,11 @@ import { lusitana } from "./ui/fonts"
 // import { useRouter } from "next/router"
 import Image from "next/image";
 
-type StepsLayoutProps = {
+type StepLayoutProps = {
   children: ReactNode
 }
 
-const StepsLayout = ({ children }: StepsLayoutProps) => {
+const StepLayout = ({ children }: StepLayoutProps) => {
     // const router = useRouter()
  
     return (
@@ -47,7 +47,7 @@ const StepsLayout = ({ children }: StepsLayoutProps) => {
           <div className='flex items-center gap-4'>
             {/* <!--the second dot is not active--> */}
             <Dot active={false} />
-            <p>Step 2</p>
+            <p>Step 2: Home</p>
           </div>
         </Link>
 
@@ -57,7 +57,7 @@ const StepsLayout = ({ children }: StepsLayoutProps) => {
           <div className='flex items-center gap-4'>
             {/* <!--the third dot is not active--> */}
             <Dot active={false} />
-            <p>Your Answers</p>
+            <p>Your Answers from Home</p>
           </div>
         </Link>      </div>
       <form>{children}</form>
@@ -65,4 +65,4 @@ const StepsLayout = ({ children }: StepsLayoutProps) => {
   )
 }
 
-export default StepsLayout;
+export default StepLayout;

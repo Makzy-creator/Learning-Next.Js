@@ -4,11 +4,11 @@ import { Dot } from "@/components/icons/Dot"
 import { VerticalLine } from "@/components/icons/VerticalLine"
 
 
-type StepsLayoutProps = {
+type stepsLayoutProps = {
   children: ReactNode
 }
 
-const StepsLayout = ({ children }: StepsLayoutProps) => {
+export const StepsLayout = ({ children }: stepsLayoutProps) => {
     // const router = useRouter()
  
     return (
@@ -45,4 +45,3 @@ const StepsLayout = ({ children }: StepsLayoutProps) => {
   )
 }
 
-export default StepsLayout;
